@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GenericResponse<T> {
 
+
     private LocalDateTime timestamp;
     private T body;
     private int status;

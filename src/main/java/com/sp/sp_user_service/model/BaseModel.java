@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class BaseModel {
 
+
     @CreatedBy
     private String createdUser;
 

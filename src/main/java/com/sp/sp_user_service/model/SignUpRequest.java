@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SignUpRequest extends BaseModel {
+
     private String email;
     private String firstName;
     private String lastName;
