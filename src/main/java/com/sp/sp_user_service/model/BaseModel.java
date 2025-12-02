@@ -1,5 +1,6 @@
 package com.sp.sp_user_service.model;
 
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +10,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class BaseModel {
 
     @CreatedBy
@@ -26,7 +29,7 @@ public class BaseModel {
     private String lastUpdatedUser;
 
     @CreatedDate
-    private LocalDateTime createdBy;
+    private LocalDateTime createdDate;
 
     @LastModifiedDate
     private LocalDateTime lastUpdatedDate;
