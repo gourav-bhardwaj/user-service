@@ -4,6 +4,7 @@ import com.sp.sp_user_service.model.GenericResponse;
 import com.sp.sp_user_service.model.LoginRequest;
 import com.sp.sp_user_service.model.SignUpRequest;
 import com.sp.sp_user_service.service.AuthService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,21 +21,22 @@ public class AuthController {
 
 
     @PostMapping("/signup")
-    public ResponseEntity<GenericResponse<Void>> signUpUser(@RequestBody SignUpRequest signUpRequest) {
+    public ResponseEntity<GenericResponse<Void>> signUpUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         service.signUpUser(signUpRequest);
-        return ResponseEntity.ok(new GenericResponse<>(HttpStatus.OK.value(), "User created successfully") );
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new GenericResponse<>(HttpStatus.CREATED.value(), "User created successfully"));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<GenericResponse<Void>> loginUser(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<GenericResponse<Void>> loginUser(@Valid @RequestBody LoginRequest loginRequest) {
         service.loginUser(loginRequest);
-        return ResponseEntity.ok(new GenericResponse<>(HttpStatus.OK.value(), "User login successfully") );
+        return ResponseEntity.ok(new GenericResponse<>(HttpStatus.OK.value(), "User login successfully"));
     }
 
     @PostMapping("/logout")
     public ResponseEntity<GenericResponse<Void>> logoutUser(@RequestParam String userId) {
         service.logoutUser(userId);
-        return ResponseEntity.ok(new GenericResponse<>(HttpStatus.OK.value(), "User logout successfully") );
+        return ResponseEntity.ok(new GenericResponse<>(HttpStatus.OK.value(), "User logout successfully"));
     }
 
 
