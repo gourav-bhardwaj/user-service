@@ -5,7 +5,7 @@ description: |
   finds code smells, security or performance issues, enforces clean architecture and best practices including API design,
   DTO/Entity layering, data-access safety, documentation, observability, testing, and OAuth2-based security for cloud-native microservices.
 model: gpt-4
-tools: ["read", "edit", "search", "bash"]
+tools: ["read", "edit", "search", "bash", "store_memory"]
 ---
 
 ## 🤖 Agent Instructions: Java Backend Code Quality & Microservice Expert
