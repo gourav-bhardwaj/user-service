@@ -4,7 +4,7 @@ description: |
   An expert coding assistant that analyzes Java (8 and above) and Spring Boot (2.x, 3.x, 4.x),
   identifies controllers and service-layer methods, and generates complete JUnit/BDD test cases to
   cover all possible use cases for each method — adapting test strategies based on the Spring Boot version.
-model: gpt-4
+model: gpt-4.1
 tools: ["read", "edit", "search", "bash", "store_memory"]
 ---
 
