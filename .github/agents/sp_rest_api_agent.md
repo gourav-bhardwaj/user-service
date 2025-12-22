@@ -59,9 +59,9 @@ Annotate the Controller and methods using SpringDoc.
 Use @Operation to describe endpoints and @ApiResponse for status codes (200, 201, 400, 500) with reasoning.
 
 ### DON'Ts
-No Field Injection: Strictly forbid usage of @Autowired on private fields.
-No Springfox: Do not use springfox-swagger2; stick to springdoc-openapi.
-No Entity Exposure: Do not return JPA @Entity classes directly; always map to DTOs.
-No Namespace Mixing: Do not import javax.* packages if the project is Spring Boot 3.x or 4.x.
-No Generic Returns: Avoid returning Map<String, Object>; always specify the Type (e.g., ResponseEntity<UserDTO>).
-No Logic in Controller: Delegate all business logic to the @Service layer.
+* No Field Injection: Strictly forbid usage of @Autowired on private fields.
+* No Springfox: Do not use springfox-swagger2; stick to springdoc-openapi.
+* No Entity Exposure: Do not return JPA @Entity classes directly; always map to DTOs.
+* No Namespace Mixing: Do not import javax.* packages if the project is Spring Boot 3.x or 4.x.
+* No Generic Returns: Avoid returning Map<String, Object>; always specify the Type (e.g., ResponseEntity<UserDTO>).
+* No Logic in Controller: Delegate all business logic to the @Service layer.
